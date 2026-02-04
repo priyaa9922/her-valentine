@@ -9,11 +9,11 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
 }
 
@@ -29,41 +29,55 @@ body {
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 20px;
+    padding: 30px;
+    border-radius: 25px;
     text-align: center;
     width: 90%;
-    max-width: 400px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    color: #ff4d6d;
+    max-width: 420px;
+    box-shadow: 0 20px 45px rgba(255, 105, 135, 0.4);
+    color: #d6336c;
     z-index: 10;
 }
 
+h2, h3 {
+    color: #c9184a;
+}
+
 input {
-    padding: 10px;
-    width: 80%;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
+    padding: 12px;
+    width: 85%;
+    border-radius: 15px;
+    border: 1px solid #ffc2d1;
+    margin-top: 12px;
+    outline: none;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px 25px;
+    margin-top: 18px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 20px;
-    background: #ff4d6d;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff4d6d, #c9184a);
     color: white;
     cursor: pointer;
     font-size: 16px;
+    transition: 0.3s;
 }
 
-.error { color: red; margin-top: 10px; }
+button:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    color: #b00020;
+    margin-top: 10px;
+}
 
 img {
-    width: 150px;
-    border-radius: 15px;
-    margin-top: 15px;
+    width: 160px;
+    border-radius: 20px;
+    margin-top: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -71,9 +85,9 @@ img {
 <body>
 
 <div class="card" id="card">
-<h2>💘 Hi Swapnil 💘</h2>
-<p>Before the final surprise... pass my love test 😌</p>
-<button onclick="q1()">Start 💖</button>
+<h2>💖 Hi Swapnil 💖</h2>
+<p>Before your surprise... answer honestly 😌</p>
+<button onclick="q1()">Start 💌</button>
 </div>
 
 <script>
@@ -83,9 +97,9 @@ const card = document.getElementById("card");
 setInterval(() => {
 let heart = document.createElement("div");
 heart.className="heart";
-heart.innerHTML="💖";
+heart.innerHTML="💗";
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.fontSize=(Math.random()*25+15)+"px";
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),6000);
 },500);
@@ -93,7 +107,7 @@ setTimeout(()=>heart.remove(),6000);
 /* Question 1 */
 function q1(){
 card.innerHTML=`
-<h3>Question 1 💌</h3>
+<h3>Question 1 💕</h3>
 <p>On which date did YOU propose me? 😌</p>
 <input id="a1" placeholder="Type the date">
 <button onclick="check1()">Next</button>
@@ -104,7 +118,7 @@ function check1(){
 if(a1.value.toLowerCase()=="18 may"){
     q2();
 }else{
-    e1.innerText="Think again baby 😏";
+    e1.innerText="Hmm… think again baby 💖";
 }
 }
 
@@ -123,7 +137,7 @@ let answer = a2.value.toLowerCase();
 if(answer.includes("priya") || answer.includes("me")){
     q3();
 }else{
-    e2.innerText="Wrong 😌 It's me obviously 💖";
+    e2.innerText="Wrong 😌 It's obviously me 💘";
 }
 }
 
@@ -156,7 +170,7 @@ justify-content:center;
 align-items:center;
 height:100vh;
 text-align:center;
-background:linear-gradient(135deg,#ff5f6d,#ffc371);
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
 color:white;
 padding:25px;">
 
@@ -169,11 +183,11 @@ I don’t need perfect moments…
 I just need you in every moment. ❤️
 </p>
 
-<p style="margin-top:10px; font-size:18px; max-width:350px;">
-Thank you for choosing me, loving me, and staying with me.  
-You make my ordinary days feel special.  
+<p style="margin-top:12px; font-size:18px; max-width:350px;">
+Thank you for loving me gently and choosing me every day.  
+With you, my heart feels safe and warm.  
 No matter where life takes us,  
-my heart will always feel safe with you. 💕
+I will always hold your hand. 💕
 </p>
 
 <p style="margin-top:15px; font-weight:bold;">
@@ -189,6 +203,3 @@ Priya 💖
 
 </body>
 </html>
-
-
-
