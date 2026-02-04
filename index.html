@@ -58,13 +58,13 @@ button {
     font-size: 16px;
 }
 
-img {
-    width: 140px;
-    border-radius: 15px;
-    margin: 10px;
-}
-
 .error { color: red; margin-top: 10px; }
+
+img {
+    width: 150px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
 </style>
 </head>
 
@@ -94,14 +94,18 @@ setTimeout(()=>heart.remove(),6000);
 function q1(){
 card.innerHTML=`
 <h3>Question 1 💌</h3>
-<p>On which date did I propose you?</p>
-<input id="a1" placeholder="Example: 18 May">
+<p>On which date did YOU propose me? 😌</p>
+<input id="a1" placeholder="Type the date">
 <button onclick="check1()">Next</button>
 <p class="error" id="e1"></p>`;
 }
+
 function check1(){
-if(a1.value.toLowerCase()=="18 may"){q2();}
-else{e1.innerText="Think again baby 😏";}
+if(a1.value.toLowerCase()=="18 may"){
+    q2();
+}else{
+    e1.innerText="Think again baby 😏";
+}
 }
 
 /* Question 2 */
@@ -113,12 +117,17 @@ card.innerHTML=`
 <button onclick="check2()">Next</button>
 <p class="error" id="e2"></p>`;
 }
+
 function check2(){
-if(a2.value.toLowerCase().includes("priya")){q3();}
-else{e2.innerText="Wrong 😌 It's me obviously 💖";}
+let answer = a2.value.toLowerCase();
+if(answer.includes("priya") || answer.includes("me")){
+    q3();
+}else{
+    e2.innerText="Wrong 😌 It's me obviously 💖";
+}
 }
 
-/* Question 3 */
+/* Final Question */
 function q3(){
 card.innerHTML=`
 <h3>Final Question 💍</h3>
@@ -132,11 +141,12 @@ function moveNo(){
 const no=document.getElementById("noBtn");
 setInterval(()=>{
 no.style.position="absolute";
-no.style.left=Math.random()*300+"px";
-no.style.top=Math.random()*200+"px";
+no.style.left=Math.random()*250+"px";
+no.style.top=Math.random()*150+"px";
 },600);
 }
 
+/* Final Romantic Screen */
 function finalYes(){
 document.body.innerHTML=`
 <div style="
@@ -148,16 +158,31 @@ height:100vh;
 text-align:center;
 background:linear-gradient(135deg,#ff5f6d,#ffc371);
 color:white;
-padding:20px;">
+padding:25px;">
+
 <h1>💍 Swapnil 💍</h1>
+
 <h2>Will you be my Valentine and my forever? 💖</h2>
-<p>I love you endlessly ❤️</p>
 
-<img src="<img src="mypic.jpg.jpeg">
-">
+<p style="margin-top:15px;">
+I don’t need perfect moments…  
+I just need you in every moment. ❤️
+</p>
 
-<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-style="width:250px;margin-top:15px;border-radius:20px;">
+<p style="margin-top:10px; font-size:18px; max-width:350px;">
+Thank you for choosing me, loving me, and staying with me.  
+You make my ordinary days feel special.  
+No matter where life takes us,  
+my heart will always feel safe with you. 💕
+</p>
+
+<p style="margin-top:15px; font-weight:bold;">
+Forever yours,  
+Priya 💖
+</p>
+
+<img src="mypic.jpg.jpeg">
+
 </div>`;
 }
 </script>
