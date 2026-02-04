@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Swapnil 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    animation: float 6s linear infinite;
+}
+@keyframes float {
+    from { transform: translateY(100vh); opacity:1; }
+    to { transform: translateY(-10vh); opacity:0; }
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    color: #ff4d6d;
+    z-index: 10;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+img {
+    width: 140px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.error { color: red; margin-top: 10px; }
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+<h2>💘 Hi Swapnil 💘</h2>
+<p>Before the final surprise... pass my love test 😌</p>
+<button onclick="q1()">Start 💖</button>
+</div>
+
+<script>
+const card = document.getElementById("card");
+
+/* Floating Hearts */
+setInterval(() => {
+let heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+/* Question 1 */
+function q1(){
+card.innerHTML=`
+<h3>Question 1 💌</h3>
+<p>On which date did I propose you?</p>
+<input id="a1" placeholder="Example: 18 May">
+<button onclick="check1()">Next</button>
+<p class="error" id="e1"></p>`;
+}
+function check1(){
+if(a1.value.toLowerCase()=="18 may"){q2();}
+else{e1.innerText="Think again baby 😏";}
+}
+
+/* Question 2 */
+function q2(){
+card.innerHTML=`
+<h3>Question 2 😍</h3>
+<p>Who loves more?</p>
+<input id="a2">
+<button onclick="check2()">Next</button>
+<p class="error" id="e2"></p>`;
+}
+function check2(){
+if(a2.value.toLowerCase().includes("priya")){q3();}
+else{e2.innerText="Wrong 😌 It's me obviously 💖";}
+}
+
+/* Question 3 */
+function q3(){
+card.innerHTML=`
+<h3>Final Question 💍</h3>
+<p>Do you want to stay with me forever?</p>
+<button onclick="finalYes()">Yes 💖</button>
+<button id="noBtn">No 😢</button>`;
+moveNo();
+}
+
+function moveNo(){
+const no=document.getElementById("noBtn");
+setInterval(()=>{
+no.style.position="absolute";
+no.style.left=Math.random()*300+"px";
+no.style.top=Math.random()*200+"px";
+},600);
+}
+
+function finalYes(){
+document.body.innerHTML=`
+<div style="
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+background:linear-gradient(135deg,#ff5f6d,#ffc371);
+color:white;
+padding:20px;">
+<h1>💍 Swapnil 💍</h1>
+<h2>Will you be my Valentine and my forever? 💖</h2>
+<p>I love you endlessly ❤️</p>
+
+<img src="<img src="mypic.jpg.jpeg">
+">
+
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+style="width:250px;margin-top:15px;border-radius:20px;">
+</div>`;
+}
+</script>
+
+</body>
+</html>
